@@ -63,7 +63,7 @@ pub fn matching() {
         None => { println!("mising") }
     }
 
-    // note: Some is similar to a nullable type in C#
-    // but we get better usage semantics from how Rust
-    // does this
+    // note: Some is part of the Option<T> enum, it is
+    // similar to a nullable type in C# but we get
+    // better usage semantics from how Rust does this
 }
