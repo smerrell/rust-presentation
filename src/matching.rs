@@ -33,6 +33,8 @@ pub fn matching() {
     }
 
     // Enums
+    // note: This is also a form of destructuring
+    // i.e. OptionalInt::Value(i) is destructuring the enum and giving (i) back
     let test_enum = OptionalInt::Value(4);
     match test_enum {
         OptionalInt::Value(i) if i > 5 => println!("greater than five! Got {}", i),
@@ -40,6 +42,7 @@ pub fn matching() {
         // Completeness is enforced, if the Missing part gets commented out...
         OptionalInt::Missing  => println!("no value"),
     }
+
 
     // Matching works for a form of if statement
     let test_enum_if = Some(32);
