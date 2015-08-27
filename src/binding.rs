@@ -1,11 +1,5 @@
 use std::intrinsics;
 
-#[derive(Debug)]
-struct Thing<'a> {
-    point: (i32, i32),
-    name: &'a str
-}
-
 pub fn binding() {
     let inferred_type = "I'm a String".to_string();
     let string = "I'm a static string slice (&str)";
@@ -39,6 +33,12 @@ pub fn binding() {
     let Thing { name: n, point: (x, y) } = thing;
     println!("name: {}, point x {}, point y {}", n, x, y);
 
+}
+
+#[derive(Debug)]
+struct Thing<'a> {
+    point: (i32, i32),
+    name: &'a str
 }
 
 fn print_type_of<T>(_: &T) -> () {
