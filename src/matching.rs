@@ -29,7 +29,7 @@ pub fn matching() {
     match z {
         'a' ... 'h' => println!("early letters"),
         'j' ... 'z' => println!("late letters"),
-        _ => println!("something else"),
+        not_letter @ _ => println!("something else {}", not_letter),
     }
 
     // Enums
@@ -45,11 +45,11 @@ pub fn matching() {
 
 
     // Matching works for a form of if statement
-    let test_enum_if = Some(32);
+    let test_enum_if: Option<i32> = None;
     if let Some(x) = test_enum_if {
         println!("Got x: {}", x);
     } else {
-        println!("missing");
+        println!("Option of int was None");
     }
 
     // instead of
@@ -57,13 +57,13 @@ pub fn matching() {
         let x = test_enum_if.unwrap();
         println!("Got x: {}", x);
     } else {
-        println!("missing");
+        println!("test_enum_if had no value");
     }
 
     // or
     match test_enum_if {
         Some(x) => { println!("Got x: {}", x) },
-        None => { println!("mising") }
+        None => { println!("missing") }
     }
 
     // note: Some is part of the Option<T> enum, it is
