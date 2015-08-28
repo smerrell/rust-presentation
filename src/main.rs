@@ -8,11 +8,12 @@ mod error_handling;
 mod functions;
 mod matching;
 mod ownership;
+mod utils;
 
 fn main() {
-    binding::binding();
+    //binding::binding();
     //matching::matching();
     //error_handling::errors();
-    //functions::functions();
+    functions::functions();
     //ownership::ownership();
 }
