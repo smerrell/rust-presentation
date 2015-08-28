@@ -4,13 +4,15 @@
 extern crate regex;
 
 mod binding;
-mod matching;
 mod error_handling;
+mod functions;
+mod matching;
 mod ownership;
 
 fn main() {
     binding::binding();
     //matching::matching();
     //error_handling::errors();
+    //functions::functions();
     //ownership::ownership();
 }
