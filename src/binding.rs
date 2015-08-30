@@ -33,6 +33,18 @@ pub fn binding() {
     let Thing { name: n, point: (x, y) } = thing;
     println!("name: {}, point x {}, point y {}", n, x, y);
 
+    // expressions can be used in binding
+    let expression = {
+        let x = 10;
+        let y = 5;
+
+        x + y
+    };
+    println!("expression: {}", expression);
+
+    let expression2 = if expression == 15 { 100 } else { 0 };
+    println!("expression2: {}", expression2);
+
 }
 
 #[derive(Debug)]
