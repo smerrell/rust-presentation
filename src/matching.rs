@@ -43,7 +43,6 @@ pub fn matching() {
         OptionalInt::Missing  => println!("no value"),
     }
 
-
     // Matching works for a form of if statement
     let test_enum_if: Option<i32> = None;
     if let Some(x) = test_enum_if {
@@ -54,7 +53,7 @@ pub fn matching() {
 
     // instead of
     if test_enum_if.is_some() {
-        let x = test_enum_if.unwrap();
+        let x = test_enum_if.unwrap(); // unwrap is like .Value on a nullable in C#
         println!("Got x: {}", x);
     } else {
         println!("test_enum_if had no value");
