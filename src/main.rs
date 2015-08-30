@@ -14,6 +14,6 @@ fn main() {
     //binding::binding();
     //matching::matching();
     //error_handling::errors();
-    functions::functions();
+    //functions::functions();
     //ownership::ownership();
 }
