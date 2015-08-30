@@ -20,8 +20,24 @@ pub fn functions() {
 
     let result = apply_to_5(|x| 5 + x);
     println!("apply_to_5: {}", result);
-    // show functions returning lambdas
-    // higher order functions
+
+    let function = create_fn();
+    function();
+
+    let upper = 1000;
+
+    let sum_of_squared_odd_numbers: u32 =
+        (0..).map(|n| n * n)
+            .take_while(|&n| n < upper)
+            .filter(|n| is_odd(*n))
+            .fold(0, |sum, i| sum + i);
+
+    println!("sum of squared odd numbers: {}", sum_of_squared_odd_numbers);
+
+}
+
+pub fn is_odd(n: u32) -> bool {
+    n % 2 == 1
 }
 
 pub fn add_two(x: i32) -> i32 {
@@ -36,4 +52,10 @@ fn apply_to_5<F>(f: F) -> i32 where
     F: Fn(i32) -> i32 { // declares the lambda signature
 
     f(5)
+}
+
+fn create_fn() -> Box<Fn()> {
+    let text = "Fn".to_owned();
+
+    Box::new(move || println!("This is a: {}", text))
 }
