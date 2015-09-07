@@ -9,6 +9,7 @@ mod functions;
 mod matching;
 mod ownership;
 mod borrowing;
+mod lifetimes;
 mod utils;
 
 fn main() {
@@ -18,4 +19,5 @@ fn main() {
     //functions::functions();
     //ownership::ownership();
     //borrowing::borrowing();
+    //lifetimes::lifetimes();
 }
