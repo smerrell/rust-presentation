@@ -1,0 +1,11 @@
+[package]
+name = "windows"
+version = "0.1.0"
+authors = ["Sam Merrell <merrell.sam@gmail.com>"]
+
+[lib]
+crate_type = ["dylib"]
+name = "hellorust"
+
+[dependencies]
+libc = "~0.1"
