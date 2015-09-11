@@ -20,4 +20,10 @@ pub fn lifetimes() {
                                //                          |
                                //                          |
     println!("a: {}", a);      //                          |
+
+    add_one(&1); //&1 must live as long as the function
 }                              // ---- a is freed ---------|
+
+fn add_one<'a>(x: &'a i32) {
+    println!("x + 1 = {}", x + 1);
+}
